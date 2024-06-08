@@ -1,0 +1,249 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poetsen One", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #eee;
+    margin: 0;
+    
+}
+
+
+h1{
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    text-align: center;
+    width: 800px;
+    margin: 10px auto;
+    border-radius: 6px;
+
+}
+.slider-containar{
+    width: 800px;
+    margin: 10px auto;
+    
+}
+button{
+    z-index: 34;
+    border: none;
+    cursor: pointer;
+    transition: .3s linear;
+    font-size: 20px;
+    font-weight: bold;
+
+
+}
+
+button:disabled{
+    opacity: .5;
+    cursor: no-drop;
+}
+.prev-btn{
+    position: absolute;
+    
+
+}
+.prev-btn::before{
+    content: "";
+    position: absolute;
+    top: 225px;
+    left: -5px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent ;
+    border-right-color: red;
+}
+.next-btn{
+    position: absolute;    
+    
+
+}
+.next-btn::before {
+    content: "";
+    position: absolute;
+    top: -225px;
+    left: 770px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: red;
+}
+
+
+
+
+
+.slider{
+    width: 800px;
+    height: 450px;
+    position: relative;
+    display: block;
+    
+
+}
+.slider .img-id{
+    font-family: "Dancing Script", cursive;
+    position: absolute;
+    background-color: black;
+    color: white;
+    left: 50%;
+    top: 10px;
+    z-index: 23;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 0 5px;
+    text-align: center;
+    transform: translate(-50%);
+
+}
+.slider img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    border-radius: 21px;
+
+}
+
+img.active {
+    opacity: 1;
+}
+
+
+.captions{
+    width: 800px;
+    position: relative;
+    margin-top: -5px;
+    display: block;
+}
+
+.captions p{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    border-radius: 6px;
+    display: block;
+    background-color: white;
+    padding: 0 10px;
+    pointer-events: none;
+
+
+} 
+
+
+@media (max-width:770px) {
+    .captions p{
+        top: 4%;
+        margin: 0 3px;
+    }
+
+    h1 ,
+    .slider img{
+        margin: 5px;
+    } 
+    
+}
+
+.captions p.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.captions p .name-city{   
+    box-sizing: border-box;
+    color: red;
+    width: 95%;
+    background-color: #eee;
+    font-size: 30px;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;    
+    border-radius: 6px;
+
+}
+
+.captions p a  {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.captions p a:hover{
+    opacity: .5;
+}
+
+
+.gallery-container {
+    width: 800px;
+    display: grid;
+    margin: auto;
+    margin: 10px 0;
+
+}
+
+.gallery-container img {
+    max-width: 100%;
+    opacity: .5;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 50px;
+
+}
+
+.gallery-container> :first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.gallery-container> :last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.gallery-container img:hover,
+.gallery-container img.active {
+    opacity: 1;
+}
+
+.names-city{
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 6px;
+    
+    
+}
+
+.names-city ul{
+    padding: 0 ;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+
+.names-city li{
+    list-style: none;
+    display: inline;
+    color: black;
+    cursor: pointer;
+    
+    
+}
+
+.names-city li:hover ,
+.names-city li.active{
+    color: red;
+}
